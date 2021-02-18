@@ -32,9 +32,10 @@ class Crawler:
         products, success = self._api.get_all_products(page=page)
         with open(self._output_file, mode="w") as fh_:
             while products:
+                print(f"Procesing products from page {page}")
                 for product in products:
-                    sku = product["sku"]
-                    name = product["name"]
+                    sku = product.get("sku")
+                    name = product.get("name")
                     print(f"Checking for product SKU: {sku} Name: {name}")
                     images = product.get("images")
                     if images:
