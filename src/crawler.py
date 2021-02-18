@@ -45,7 +45,7 @@ class Crawler:
                                 msg = f"--> Image url {url} doesn't exist for product " \
                                       f"SKU: {sku} Name: {name}"
                                 print(msg)
-                                fh_.write(msg)
+                                fh_.write(f"{msg}\n")
 
                 # Sleep for sometime
                 time.sleep(2)
